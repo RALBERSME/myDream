@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  height: 100vh;
+  background-color: #0275a4;
+}
+.girl {
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+}
+.half {
+  display: grid;
+  grid-template-columns: 10fr 2fr;
+}
+.wrapper {
+  background-image: url("https://cdn.pixabay.com/photo/2022/07/03/23/33/fish-7300083_640.jpg");
+  width: 100%;
+  background-size: 40% 40%; /* Size of the background gradient*/
+}
+section {
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/05/20/50/decorative-1801462_640.png");
+}
+.container {
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.bubble {
+  position: fixed;
+  opacity: 0; /* Hide the bubbles initially */
+  animation: floatBubble linear infinite;
+  z-index: 2;
+  overflow: hidden;
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0vh) translateX(-50%) rotate(0deg); /* Start position at bottom center of viewport */
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1; /* Keep opacity at 1 until reaching the top of the viewport */
+  }
+  100% {
+    transform: translateY(-150vh) translateX(-50%) rotate(360deg); /* End position at top center of viewport */
+    opacity: 0;
+  }
+}
+
+/* Set varying sizes for the bubbles */
+.bubble:nth-child(1) {
+  width: 9%;
+  bottom: 0;
+  left: 5%; /* Adjusted to evenly space across viewport */
+  animation-duration: 10s;
+  animation-delay: 0s; /* No delay for the first bubble */
+}
+
+.bubble:nth-child(2) {
+  width: 8%;
+  bottom: 0;
+  left: 20%; /* Adjusted to evenly space across viewport */
+  animation-duration: 15s;
+  animation-delay: 3s; /* Delay the second bubble by 3 seconds */
+}
+
+.bubble:nth-child(3) {
+  width: 7%;
+  bottom: 0;
+  left: 35%; /* Adjusted to evenly space across viewport */
+  animation-duration: 12s;
+  animation-delay: 6s; /* Delay the third bubble by 6 seconds */
+}
+
+.bubble:nth-child(4) {
+  width: 10%;
+  bottom: 0;
+  left: 50%; /* Adjusted to evenly space across viewport */
+  animation-duration: 18s;
+  animation-delay: 2s; /* Delay the fourth bubble by 2 seconds */
+}
+
+.bubble:nth-child(5) {
+  width: 8%;
+  bottom: 0;
+  left: 65%; /* Adjusted to evenly space across viewport */
+  animation-duration: 13s;
+  animation-delay: 5s; /* Delay the fifth bubble by 5 seconds */
+}
+
+.bubble:nth-child(6) {
+  width: 3%;
+  bottom: 0;
+  left: 80%; /* Adjusted to evenly space across viewport */
+  animation-duration: 20s;
+  animation-delay: 4s; /* No delay for the first bubble */
+}
+
+.bubble:nth-child(7) {
+  width: 6%;
+  bottom: 0;
+  left: 30%; /* Adjusted to evenly space across viewport */
+  animation-duration: 14s;
+  animation-delay: 6s; /* Delay the second bubble by 3 seconds */
+}
+
+.bubble:nth-child(8) {
+  width: 11%;
+  bottom: 0;
+  left: 70%; /* Adjusted to evenly space across viewport */
+  animation-duration: 20s;
+  animation-delay: 3s; /* Delay the third bubble by 6 seconds */
+}
+
+/* Additional bubbles */
+.bubble:nth-child(9) {
+  width: 9%;
+  bottom: 0;
+  left: 15%; /* Adjusted to evenly space across viewport */
+  animation-duration: 18s;
+  animation-delay: 5s; /* Delay the ninth bubble by 3 seconds */
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.bubble:nth-child(10) {
+  width: 6%;
+  bottom: 0;
+  left: 65%; /* Adjusted to evenly space across viewport */
+  animation-duration: 14s;
+  animation-delay: 7s; /* Delay the tenth bubble by 7 seconds */
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+aside {
+  color: #fecc4f;
+  color: #e4633b;
+  color: #e4633b;
+
+  background-color: #0275a4;
+  height: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.85rem;
+  padding: 5px;
+}
+button {
+  color: #fecc4f;
+  background-color: #0275a4;
+  width: 90%;
+  border: 2px double #fecc4f;
+  outline: 2px solid #f26700;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.85rem;
+}
+button:hover {
+  color: #0275a4;
+  background-color: #fecc4f;
+  border: 2px double #f26700;
+  outline: 2px solid #0275a4;
+}
+p {
+  margin-left: 10px;
+  color: #fecc4f;
+  font-style: italic;
+  background-color: #0275a4;
+}

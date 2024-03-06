@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALTANTIS BOOK</title>
+    <!--Google Fonts and Icons-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        background-image: url("atlantis.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60%;
+        background-color: #e3ce8f;
+      }
+      .center {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .book {
+        width: 400px;
+        height: 300px;
+        width: 600px;
+        height: 450px;
+        position: relative;
+      }
+      .pages {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .page {
+        width: 380px;
+        height: 270px;
+        width: 570px;
+        height: 405px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 7mm;
+        margin: 0 6px;
+        transform-style: preserve-3d;
+        transform-origin: left;
+        transition: 0.25s;
+        box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.15),
+          1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+      }
+      .page-side {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 20px 30px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        border-radius: 7mm;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+      }
+      .page-head {
+        width: 100%;
+      }
+      .page-title {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 40px;
+        font-weight: 500;
+      }
+      .page-subtitle {
+        font-size: 12px;
+        font-weight: 300;
+      }
+      .page-content {
+        flex-grow: 1;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: flex-end;
+      }
+      .page-footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 15px;
+        font-size: 14px;
+      }
+      .pg-no {
+        width: 14px;
+        padding: 0 15px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: #344955;
+        background: white;
+        border-radius: 3mm;
+        background: #40a2d8;
+        background: #7db5d3;
+        border-radius: 50%;
+      }
+      .front {
+        background: #e3ce8f;
+        color: #344955;
+        padding-left: 40px;
+      }
+      .back {
+        background: #344955;
+        color: white;
+        padding-right: 40px;
+        transform: rotateY(180deg);
+      }
+      .beads {
+        position: absolute;
+        top: 0;
+        left: -12px;
+        height: 270px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        z-index: 9999;
+      }
+      .bead {
+        width: 36px;
+        height: 12px;
+
+        background: linear-gradient(
+          to left,
+          #333,
+          #333 50%,
+          #eee 75%,
+          #333 75%
+        );
+        border-radius: 5mm;
+        z-index: 9999;
+        box-shadow: inset 1px 2px 0 0 rgba(0, 0, 0, 0.15),
+          inset 1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+      }
+      .controls {
+        width: 350px;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .controls button {
+        background: white;
+        background: #7db5d3;
+        width: 40px;
+        height: 40px;
+        border: 0.4mm solid rgb(40, 40, 40);
+        border-radius: 50%;
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .btn {
+        padding: 10px;
+        background: #7db5d3;
+        color: white;
+        border-radius: 5px;
+      }
+      .btn:hover {
+        background: #e3ce8f;
+        color: white;
+        color: black;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div class="book">
+        <div class="pages">
+          <div class="beads">
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+            <div class="bead"></div>
+          </div>
+
+          <div class="page active">
+            <div class="page-side front">
+              <div class="page-head">
+                <div class="page-title" style="margin-top: -3rem">
+                  THE DREAMS OF ATLANTIS
+                  <img
+                    style="height: 17rem; z-index: 10"
+                    src="https://cdn.pixabay.com/photo/2023/01/11/18/51/mermaid-7712521_640.png"
+                  /><span>Visited in 2024</span>
+                </div>
+              </div>
+              <div class="page-content">
+                Long, long ago, when Atlantis sank, it took away many dreams.
+                Dreams that seemed lost forever. But you managed to penetrate
+                this legendary underworld. Unravel the secrets to be discovered
+                by clicking on the hand below.
+              </div>
+              <div class="page-footer">
+                <span></span>
+                <span class="pg-no">I</span>
+              </div>
+            </div>
+
+            <div class="page-side back">
+              <div class="page-head">
+                <div class="page-title">
+                  BEFORE THE EARTHQUAKE
+                  <span class="material-symbols-outlined"> swords </span>
+                </div>
+                <div class="page-subtitle"></div>
+                <span>mentioned by Platon;</span>
+                <span>current year: 9600 BC</span>
+              </div>
+              <div class="page-content">
+                We are in the year 9600 BC, before the great earthquake that
+                will destroy everything. Here, in Atlantis, live brave warriors
+                who conquer other countries with a fleet of thousands of ships
+                and become ever more powerful. So far, however, they have not
+                been able to defeat the Greeks.
+              </div>
+              <div class="page-footer">
+                <span class="pg-no">II</span>
+              </div>
+            </div>
+          </div>
+          <div class="page">
+            <div class="page-side front">
+              <div class="page-head">
+                <div class="page-title">
+                  PLATON`S KRITIAS
+                  <span class="material-symbols-outlined"> emoji_nature </span>
+                </div>
+                <div class="page-subtitle"></div>
+                <span>quoted by Platon;</span>
+                <span>year of quote: 360 BC</span>
+              </div>
+              <div class="page-content">
+                Atlantis is an empire larger than Libya (Λιβύη) and Asia (Ασία)
+                combined (Timaeus 24e). It is rich in all kinds of raw
+                materials, especially gold and silver. The vast plains of the
+                large islands are extremely fertile and are supplied with
+                sufficient water through artificial canals. Two harvests are
+                possible annually<br />
+                (Critias 118c-e).
+              </div>
+              <div class="page-footer">
+                <span></span>
+                <span class="pg-no">III</span>
+              </div>
+            </div>
+            <div class="page-side back">
+              <div class="page-head">
+                <div class="page-title">
+                  THE CENTRE OF ATLANTIS
+                  <span class="material-symbols-outlined">
+                    account_balance
+                  </span>
+                </div>
+                <div class="page-subtitle">quoted by Platon</div>
+              </div>
+              <div class="page-content">
+                In the center of Atlantis there is a Temple of Poseidon on the
+                Acropolis, 90m wide and correspondingly high. Everything is
+                covered with gold, silver and orichalkos and shines
+                magnificently in the sun. The temple is also surrounded by
+                golden statues.
+              </div>
+              <div class="page-footer">
+                <span></span>
+                <span class="pg-no">IV</span>
+              </div>
+            </div>
+          </div>
+          <div class="page">
+            <div class="page-side front">
+              <div class="page-head">
+                <div class="page-title">
+                  THE CHANGE
+                  <span class="material-symbols-outlined"> editor_choice </span>
+                </div>
+                <div class="page-subtitle">quoted by Platon</div>
+              </div>
+              <div class="page-content">
+                The original ruler of Atlantis was Atlas (Critias 114a–c), then
+                his descendants. Atlantis transformed from an originally rural
+                island into a powerful sea power. It soon had a unique army and
+                a strong navy with 1,200 warships and a crew of 240,000 men for
+                the capital's fleet alone (Critias 119a–b). With this force they
+                conquered Europe as far as Tyrrhenia and North Africa as far as
+                Egypt (Timaeus 24e–25b).
+              </div>
+              <div class="page-footer">
+                <span></span>
+                <span class="pg-no">V</span>
+              </div>
+            </div>
+            <div class="page-side back">
+              <div class="page-head">
+                <div class="page-title">
+                  THE CATASTROPHE
+                  <span class="material-symbols-outlined"> sos </span>
+                </div>
+                <div class="page-subtitle">quoted by Platon</div>
+              </div>
+              <div class="page-content">
+                The vastly outnumbered Athenians cause Atlantis to suffer a
+                military defeat, which is understood in Atlantis as a punishment
+                from the gods for the hubris of its rulers (Timaeus 24e; Critias
+                120e, 121c). The reason for the punishment is that the “divine
+                part” of the Atlanteans was visibly dwindling through mixing
+                with humans. This is how the greed for power and wealth
+                developed, which is now being punished (Critias 121a–c).
+              </div>
+              <div class="page-footer">
+                <button class="btn" onclick="window.location.href='emily.html'">
+                  click here to get to the next dream
+                </button>
+                <span class="pg-no">VI</span>
+              </div>
+            </div>
+          </div>
+          <div class="page"></div>
+        </div>
+      </div>
+      <div class="controls">
+        <button type="button" class="btn" onclick="previous()">
+          <span class="material-symbols-outlined">
+            text_select_jump_to_beginning
+          </span>
+        </button>
+        <button type="button" class="btn" onclick="next()">
+          <span class="material-symbols-outlined"> wrist </span>
+        </button>
+      </div>
+    </div>
+    <script>
+      function setIndex() {
+        let pages = document.querySelectorAll(".page");
+        for (var i = 0; i < pages.length; i++) {
+          pages[i].style.zIndex = pages.length - i;
+        }
+      }
+
+      setIndex();
+
+      function previous() {
+        let active = document.querySelector(".active");
+        let prevSib = active.previousElementSibling;
+        active.className = "page";
+        prevSib.className = "page active";
+        setIndex();
+        prevSib.style.transform = "rotateY(0deg)";
+        let prevSib2 = prevSib.previousElementSibling;
+        if (prevSib2 && prevSib2.className == "page") {
+          prevSib2.style.zIndex = "9998";
+        }
+      }
+
+      function next() {
+        let active = document.querySelector(".active");
+        let nextSib = active.nextElementSibling;
+        active.style.transform = "rotateY(180deg)";
+        active.className = "page";
+        setIndex();
+        active.style.zIndex = "9998";
+        if (nextSib) {
+          nextSib.className = "page active";
+        }
+      }
+    </script>
+  </body>
+</html>
