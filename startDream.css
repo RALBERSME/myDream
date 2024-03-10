@@ -9,7 +9,6 @@ body {
 }
 .container {
   position: absolute;
-
   top: 0vh;
   left: 0%;
   width: 100vw;
@@ -34,4 +33,10 @@ h1 {
 }
 .choice {
   color: #be906e;
+}
+@media screen and (max-width: 800px) {
+  .intro {
+    padding: 25px;
+    font-size: 0.75rem;
+  }
 }

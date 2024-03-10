@@ -35,3 +35,22 @@ p {
     left: 142vh;
   }
 }
+@media screen and (max-width: 800px) {
+  body {
+    height: 100vh;
+    background-image: url(ladder.png);
+    background-position: 80% 50%;
+    background-repeat: no-repeat;
+  }
+  @keyframes climb {
+    0% {
+      top: 18vh;
+      left: 5vh;
+    }
+
+    100% {
+      top: 88vh;
+      left: 24vh;
+    }
+  }
+}

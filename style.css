@@ -51,6 +51,13 @@ h2 span {
   left: 70%;
   font-size: 1.5rem;
 }
+.enter2 {
+  position: absolute;
+  top: 82%;
+  left: 60%;
+  font-size: 1.5rem;
+  color: rgb(242, 242, 125);
+}
 blockquote {
   position: absolute;
   top: 80%;
@@ -90,5 +97,38 @@ section i {
   }
   100% {
     opacity: 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  body {
+    background-color: bisque;
+    height: auto;
+  }
+  #myVideo {
+    display: absolute;
+    width: 100%;
+    height: 40vh;
+    z-index: -1;
+  }
+  .enter {
+    position: absolute;
+    top: 75%;
+    left: 10%;
+    font-size: 1.3rem;
+  }
+  .enter2 {
+    position: absolute;
+    top: 99%;
+    left: 5%;
+    font-size: 1rem;
+  }
+  blockquote {
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 15px;
   }
 }

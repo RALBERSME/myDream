@@ -15,12 +15,12 @@ body {
   grid-template-columns: 10fr 2fr;
 }
 .wrapper {
-  background-image: url("https://cdn.pixabay.com/photo/2022/07/03/23/33/fish-7300083_640.jpg");
+  background-image: url("bubble1.jpg");
   width: 100%;
   background-size: 40% 40%; /* Size of the background gradient*/
 }
 section {
-  background-image: url("https://cdn.pixabay.com/photo/2016/11/05/20/50/decorative-1801462_640.png");
+  background-image: url("bubble2.jpg");
 }
 .container {
   height: 100%;
@@ -178,4 +178,10 @@ p {
   color: #fecc4f;
   font-style: italic;
   background-color: #0275a4;
+}
+@media screen and (max-width: 800px) {
+  .half {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }

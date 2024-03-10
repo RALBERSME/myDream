@@ -17,7 +17,7 @@ section {
   width: 100%;
   height: 100vh;
   background: #333;
-  background-image: url("https://cdn.pixabay.com/photo/2016/02/22/18/46/underwater-1216244_1280.jpg");
+  background-image: url("underwater.jpg");
   position: fixed;
 }
 
@@ -55,4 +55,12 @@ section h2 {
 }
 pre {
   font-size: 8rem;
+}
+@media screen and (max-width: 800px) {
+  body {
+    min-height: 80vh;
+  }
+  section h2 {
+    font-size: 8em;
+  }
 }
